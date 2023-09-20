@@ -81,7 +81,7 @@ const FormLogin = ({ callBack }: FormLoginProps) => {
                 <FormComponent name="username" type="text" placeholder="Username" />
                 <FormComponent name="password" type={showPassword ? "text" : "password"} placeholder="Password" />
                 <CheckboxLoginComponent inputId="customCheck" title="Tampilkan Password" callBack={(value: boolean) => setShowPassword(value)} />
-                <ButtonComponent typeButton="submit" style="btn btn-primary btn-block" title={isLoading ? "Loading..." : "Login"} isDisable={isLoading} />
+                <ButtonComponent typeButton="submit" style="btn btn-success btn-block" title={isLoading ? "Loading..." : "Login"} isDisable={isLoading} />
             </form>
             {/* <a href="#" onClick={() => signIn("google", {
                 callbackUrl,

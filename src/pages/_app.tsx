@@ -1,14 +1,15 @@
-// import '@/styles/globals.css'
-import AppShell from '@/views/containers/organisms/AppShell';
+import '@/styles/globals.css'
 import { SessionProvider } from 'next-auth/react';
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import store from '../utils/redux/store';
 
 export default function App({ Component, pageProps: {session, ...pageProps} }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <AppShell>
+      <Provider store={store}>
         <Component {...pageProps} />
-      </AppShell>
+      </Provider>
     </SessionProvider>
   );
 }

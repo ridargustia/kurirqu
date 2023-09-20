@@ -1,11 +1,15 @@
-import { signOut } from "next-auth/react";
+import AppShell from "@/views/containers/organisms/AppShell";
+import CardSegment from "@/views/containers/organisms/Card";
+import TitlePageSegment from "@/views/containers/organisms/TitlePage";
 
 const Dashboard = () => {
     return (
-        <div>
-            <h3>Dashboard Page</h3>
-            <button onClick={() => signOut()}>Logout</button>
-        </div>
+        <AppShell>
+            <div className="container-fluid" id="container-wrapper">
+                <TitlePageSegment title="Dashboard"/>
+                <CardSegment />
+            </div>
+        </AppShell>
     );
 }
 

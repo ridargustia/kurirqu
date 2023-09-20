@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -104,4 +104,38 @@ a {
   html {
     color-scheme: dark;
   }
+} */
+
+.hidden {
+  display: none;
+  height: 0;
+  transition: all 3s;
+}
+
+.collapsing_enter {
+  height: 0;
+  transition: height 1000ms;
+}
+
+.collapsing_enter_active {
+  /* height: 0; */
+  /* transform: scale(0); */
+  /* transform: scale(2); */
+  /* -webkit-transition: height .15s ease;
+  transition: height 300ms ease; */
+}
+
+.collapsing_enter_done {
+  height: 200px;
+}
+
+.collapsing_exit {
+
+}
+
+.collapsing_exit_active {
+
+}
+
+.collapsing_exit_done {
 }
