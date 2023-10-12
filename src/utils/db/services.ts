@@ -36,11 +36,16 @@ export async function signIn(userData: {username: string}) {
 }
 
 export async function signUp(userData: {
+    fullName: string,
+    phone: string,
+    address: string,
     username: string,
     email: string,
-    name: string,
     password: string,
-    role: number,
+    gender: number,
+    instansiId: number,
+    cabangId: number,
+    usertypeId: number,
 }, callback: Function) {
     const q = query(collection(firestore, "users"), where("username", "==", userData.username));
     const snapshot = await getDocs(q);
@@ -53,7 +58,7 @@ export async function signUp(userData: {
         callback({status: false, message: "Username already exists"});
     } else {
         userData.password = await bcrypt.hash(userData.password, 10);
-        userData.role = 1;
+
         await addDoc(collection(firestore, "users"), userData)
             .then(() => {
                 callback({status: true, message: "Register success"});

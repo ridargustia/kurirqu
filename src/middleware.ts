@@ -14,7 +14,11 @@ export function mainMiddleware(req: NextRequest) {
     // }
 }
 
-export default withAuth(mainMiddleware, ["/dashboard", "/"]);
+export default withAuth(mainMiddleware, [
+    "/dashboard",
+    "/",
+    "/user/create",
+]);
 
 // export const config = {
 //     matcher: ["/", "/dashboard"],

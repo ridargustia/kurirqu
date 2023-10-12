@@ -22,7 +22,7 @@ const FormLogin = ({ callBack }: FormLoginProps) => {
 
     const callbackUrl: any = query.callbackUrl || '/dashboard';
     const handleSubmit = async (event: any) => {
-        // Fitur Register
+        // // Fitur Register
         // event.preventDefault();
         // setIsLoading(true);
         // setError("");
